@@ -1,0 +1,72 @@
+[tool.briefcase]
+project_name = "TesT App"
+bundle = "com.beeware.testapp"
+version = "0.0.1"
+url = "https://nothing.yet/"
+license = "GNU General Public License v3 or later (GPLv3+)"
+author = 'Sohil876'
+author_email = "sohil876@gmail.com"
+
+[tool.briefcase.app.testapp]
+formal_name = "TesT App"
+description = "Test app with python3/beeware"
+icon = "src/testapp/resources/testapp"
+sources = ['src/testapp']
+requires = [
+]
+
+
+[tool.briefcase.app.testapp.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev38',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.testapp.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev38',
+]
+
+[tool.briefcase.app.testapp.linux.appimage]
+system_requires = [
+    'gir1.2-webkit-3.0',
+    'libcairo2-dev',
+    'libgirepository1.0-dev',
+    'libgtk-3-dev',
+    'libpango1.0-dev',
+    'librsvg2-dev',
+    'libwebkitgtk-3.0-0',
+]
+linuxdeploy_plugins = [
+    'DEPLOY_GTK_VERSION=3 gtk',
+]
+
+[tool.briefcase.app.testapp.linux.flatpak]
+flatpak_runtime = 'org.gnome.Platform'
+flatpak_runtime_version = '42'
+flatpak_sdk = 'org.gnome.Sdk'
+
+[tool.briefcase.app.testapp.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev38',
+]
+
+# Mobile deployments
+[tool.briefcase.app.testapp.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev38',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.testapp.android]
+requires = [
+    'toga-android>=0.3.0.dev38'
+]
+
+[tool.briefcase.app.testapp.web]
+requires = [
+    # Workaround; toga-web 0.3.0.dev38 doesn't include toga-core as a dependency.
+    "toga-core>=0.3.0.dev38",
+    "toga-web>=0.3.0.dev38",
+]
+style_framework = "Bootstrap v4.6"
