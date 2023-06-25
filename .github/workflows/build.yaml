@@ -45,14 +45,14 @@ jobs:
         run: briefcase build android
         shell: bash
 
-      - name: Package app
-        run: briefcase package android gradle
-        shell: bash
+#      - name: Package app
+#        run: briefcase package android gradle # For *.aab package format
+#        shell: bash
 
       - name: Upload build apk
         uses: actions/upload-artifact@v3
         with:
-          name: testApp_unsigned
-          path: ./dist/*.apk
+          name: testapp_debug
+          path: ./build/testapp/android/gradle/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
 
