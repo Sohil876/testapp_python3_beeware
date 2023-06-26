@@ -1,12 +1,16 @@
 """
 Test app with python3/beeware
 """
+# Imports
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 import httpx
 
+# Variables
 
+
+# Functions
 def greeting(name):
     if name:
         return f"Hello, {name}"
@@ -50,12 +54,16 @@ class TesTApp(toga.App):
 
     def say_hello(self, widget):
         with httpx.Client() as client:
-            response = client.get("https://jsonplaceholder.typicode.com/posts/42")
-        payload = response.json()
+            try:
+                response = client.get("https://jsonplaceholder.typicode.com/posts/42")
+            except httpx.HTTPError:
+                payload = "Failed to fetch data!"
+            else:
+                payload = response.json()["body"]
 
         self.main_window.info_dialog(
             greeting(self.name_input.value),
-            payload["body"],
+            payload,
         )
 
 
