@@ -52,10 +52,10 @@ class TesTApp(toga.App):
         self.main_window.content = main_box
         self.main_window.show()
 
-    def say_hello(self, widget):
-        with httpx.Client() as client:
+    async def say_hello(self, widget):
+        async with httpx.AsyncClient() as client:
             try:
-                response = client.get("https://jsonplaceholder.typicode.com/posts/42")
+                response = await client.get("https://jsonplaceholder.typicode.com/posts/42")
             except httpx.HTTPError:
                 payload = "Failed to fetch data!"
             else:
