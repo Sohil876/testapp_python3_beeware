@@ -13,6 +13,7 @@ description = "Test app with python3/beeware"
 icon = "src/testapp/resources/testapp"
 sources = ['src/testapp']
 requires = [
+    "httpx",
 ]
 
 
