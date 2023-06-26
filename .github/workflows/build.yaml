@@ -45,9 +45,9 @@ jobs:
         run: briefcase build android
         shell: bash
 
-#      - name: Package app
-#        run: briefcase package android gradle # For *.aab package format
-#        shell: bash
+      - name: Package app
+        run: briefcase package android gradle # For packaging as *.aab add -p aab at the end
+        shell: bash
 
       - name: Upload build apk
         uses: actions/upload-artifact@v3
