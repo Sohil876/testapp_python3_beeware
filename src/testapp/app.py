@@ -17,7 +17,7 @@ def greeting(name):
     else:
         return "Hello, stranger"
 
-class TesTApp(toga.App):
+class TestApp(toga.App):
 
     def startup(self):
         """
@@ -68,5 +68,5 @@ class TesTApp(toga.App):
 
 
 def main():
-    return TesTApp()
+    return TestApp()
 
