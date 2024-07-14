@@ -1,14 +1,14 @@
 [tool.briefcase]
-project_name = "TesT App"
+project_name = "Test App"
 bundle = "com.beeware.testapp"
-version = "0.0.1"
+version = "0.0.2"
 url = "https://nothing.yet/"
-license = "GNU General Public License v3 or later (GPLv3+)"
+license.file = "LICENSE"
 author = 'Sohil876'
 author_email = "sohil876@gmail.com"
 
 [tool.briefcase.app.testapp]
-formal_name = "TesT App"
+formal_name = "Test App"
 description = "Test app with python3/beeware"
 icon = "src/testapp/resources/testapp"
 sources = ['src/testapp']
