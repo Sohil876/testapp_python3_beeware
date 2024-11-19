@@ -11,7 +11,9 @@ author_email = "sohil876@gmail.com"
 formal_name = "Test App"
 description = "Test app with python3/beeware"
 icon = "src/testapp/resources/testapp"
-sources = ['src/testapp']
+sources = [
+    "src/testapp",
+]
 requires = [
     "httpx",
 ]
@@ -20,13 +22,13 @@ requires = [
 [tool.briefcase.app.testapp.macOS]
 universal_build = true
 requires = [
-    "toga-cocoa~=0.4.5",
-    "std-nslog~=1.0.0",
+    "toga-cocoa~=0.4.7",
+    "std-nslog~=1.0.3",
 ]
 
 [tool.briefcase.app.testapp.linux]
 requires = [
-    "toga-gtk~=0.4.5",
+    "toga-gtk~=0.4.7",
 ]
 
 [tool.briefcase.app.testapp.linux.system.debian]
@@ -136,24 +138,24 @@ linuxdeploy_plugins = [
 
 [tool.briefcase.app.testapp.linux.flatpak]
 flatpak_runtime = "org.gnome.Platform"
-flatpak_runtime_version = "45"
+flatpak_runtime_version = "47"
 flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.testapp.windows]
 requires = [
-    "toga-winforms~=0.4.5",
+    "toga-winforms~=0.4.7",
 ]
 
 # Mobile deployments
 [tool.briefcase.app.testapp.iOS]
 requires = [
-    "toga-iOS~=0.4.5",
-    "std-nslog~=1.0.0",
+    "toga-iOS~=0.4.7",
+    "std-nslog~=1.0.3",
 ]
 
 [tool.briefcase.app.testapp.android]
 requires = [
-    "toga-android~=0.4.5",
+    "toga-android~=0.4.7",
 ]
 
 build_gradle_extra_content = "android.defaultConfig.ndk.abiFilters = ['arm64-v8a', 'armeabi-v7a']"
@@ -161,17 +163,17 @@ build_gradle_extra_content = "android.defaultConfig.ndk.abiFilters = ['arm64-v8a
 base_theme = "Theme.MaterialComponents.Light.DarkActionBar"
 
 build_gradle_dependencies = [
-    "com.google.android.material:material:1.11.0",
+    "com.google.android.material:material:1.12.0",
     # Needed for DetailedList
     # "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
     # Needed for MapView
-    # "org.osmdroid:osmdroid-android:6.1.0",
+    # "org.osmdroid:osmdroid-android:6.1.20",
 ]
 
 # Web deployments
 [tool.briefcase.app.testapp.web]
 requires = [
-    "toga-web~=0.4.5",
+    "toga-web~=0.4.7",
 ]
 style_framework = "Shoelace v2.3"
 
